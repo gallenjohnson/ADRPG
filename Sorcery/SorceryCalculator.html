@@ -1,0 +1,410 @@
+<doctype!>
+<html>
+<head>
+</head>
+<style>
+
+input[type=text] {
+width: 10%;
+border: 1px solid black;
+padding: 5px 7px;
+margin: 8px 0;
+box-sizing: border-box;
+color: black;
+font-size: 16px;
+font-family: sans-serif;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 8px 10px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+font-size: 16px;
+font-family: sans-serif;
+}
+
+select {
+width: 23%;
+border: 1px solid black;
+padding: 5px 5px;
+margin: 8px 0;
+box-sizing: border-box;
+color: black;
+font-size: 12px;
+font-family: sans-serif;
+}
+</style>
+
+<body style="background-color:#e1dfdb;">
+<font face="sans-serif" size=0>
+<div style="padding-left: 10px;">
+<input type="button" value="Calculate" onclick="getSum()">
+<br><br>
+</div>
+
+<div style="padding-left: 10px;">
+<input type="text" id="minutes">
+<span class="total-cost">Minutes or </span>
+<input type="text" id="hours">
+<span class="total-cost">Hours</span>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell1" name="micro-spell1">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin1" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin1')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin2" name="pin2" value=0 onclick="setLynchPinValue('pin2')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin3" name="pin3" value=0 onclick="setLynchPinValue('pin3')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin4" name="pin4" value=0 onclick="setLynchPinValue('pin4')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin5" name="pin5" value=0 onclick="setLynchPinValue('pin5')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin6" name="pin6" value=0 onclick="setLynchPinValue('pin6')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin7" name="pin7" value=0 onclick="setLynchPinValue('pin7')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin8" name="pin8" value=0 onclick="setLynchPinValue('pin8')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell2" name="micro-spell2">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin9" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin9')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin10" name="pin2" value=0 onclick="setLynchPinValue('pin10')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin11" name="pin3" value=0 onclick="setLynchPinValue('pin11')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin12" name="pin4" value=0 onclick="setLynchPinValue('pin12')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin13" name="pin5" value=0 onclick="setLynchPinValue('pin13')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin14" name="pin6" value=0 onclick="setLynchPinValue('pin14')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin16" name="pin7" value=0 onclick="setLynchPinValue('pin15')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin16" name="pin8" value=0 onclick="setLynchPinValue('pin16')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell3" name="micro-spell3">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin17" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin17')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin18" name="pin2" value=0 onclick="setLynchPinValue('pin18')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin19" name="pin3" value=0 onclick="setLynchPinValue('pin19')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin20" name="pin4" value=0 onclick="setLynchPinValue('pin20')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin21" name="pin5" value=0 onclick="setLynchPinValue('pin21')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin22" name="pin6" value=0 onclick="setLynchPinValue('pin22')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin23" name="pin7" value=0 onclick="setLynchPinValue('pin23')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin24" name="pin8" value=0 onclick="setLynchPinValue('pin24')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell4" name="micro-spell4">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin25" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin25')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin26" name="pin2" value=0 onclick="setLynchPinValue('pin26')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin27" name="pin3" value=0 onclick="setLynchPinValue('pin27')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin28" name="pin4" value=0 onclick="setLynchPinValue('pin28')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin29" name="pin5" value=0 onclick="setLynchPinValue('pin29')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin30" name="pin6" value=0 onclick="setLynchPinValue('pin30')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin31" name="pin7" value=0 onclick="setLynchPinValue('pin31')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin32" name="pin8" value=0 onclick="setLynchPinValue('pin32')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell5" name="micro-spell5">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin33" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin33')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin34" name="pin2" value=0 onclick="setLynchPinValue('pin34')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin35" name="pin3" value=0 onclick="setLynchPinValue('pin35')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin36" name="pin4" value=0 onclick="setLynchPinValue('pin36')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin37" name="pin5" value=0 onclick="setLynchPinValue('pin37')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin38" name="pin6" value=0 onclick="setLynchPinValue('pin38')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin39" name="pin7" value=0 onclick="setLynchPinValue('pin39')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin40" name="pin8" value=0 onclick="setLynchPinValue('pin40')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell6" name="micro-spell6">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin41" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin41')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin42" name="pin2" value=0 onclick="setLynchPinValue('pin42')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin43" name="pin3" value=0 onclick="setLynchPinValue('pin43')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin44" name="pin4" value=0 onclick="setLynchPinValue('pin44')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin45" name="pin5" value=0 onclick="setLynchPinValue('pin45')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin46" name="pin6" value=0 onclick="setLynchPinValue('pin46')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin47" name="pin7" value=0 onclick="setLynchPinValue('pin47')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin48" name="pin8" value=0 onclick="setLynchPinValue('pin48')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell7" name="micro-spell6">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin49" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin49')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin50" name="pin2" value=0 onclick="setLynchPinValue('pin50')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin51" name="pin3" value=0 onclick="setLynchPinValue('pin51')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin52" name="pin4" value=0 onclick="setLynchPinValue('pin52')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin53" name="pin5" value=0 onclick="setLynchPinValue('pin53')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin54" name="pin6" value=0 onclick="setLynchPinValue('pin54')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin55" name="pin7" value=0 onclick="setLynchPinValue('pin55')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin56" name="pin8" value=0 onclick="setLynchPinValue('pin56')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<label for="micro-spell">Micro Spell</label>
+<select id="micro-spell8" name="micro-spell6">
+<option selected value=0> -- select an option -- </option>
+<option style="font-size: 14; font-weight: bold;" value=60>Shadow Opening</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Magical Energy</option>
+<option style="font-size: 14; font-weight: bold;" value=60>Mind Touch</option>
+<optgroup style="font-size: 14;" label="Shadow Manipulation">
+<option value=60>Shape Shift Shadow Items</option>
+<option value=60>Prepare Item or Area for Magical Energy</option>
+<option value=60>Define Channel for Magic Energy</option>
+</optgroup>
+</select><br>
+
+<div style="font-size: 13;padding-left:20px;">
+<span class="common-lynch-pins">Common Lynch Pins</span><br>
+<input type="checkbox" id="pin57" name="pin1" value=0 style="padding-left: 20px;" onclick="setLynchPinValue('pin57')">
+<label for="pin1"> Name of Current Shadow</label>
+<input type="checkbox" id="pin58" name="pin2" value=0 onclick="setLynchPinValue('pin58')">
+<label for="pin2"> Name of Destination Shadow</label>
+<input type="checkbox" id="pin59" name="pin3" value=0 onclick="setLynchPinValue('pin59')">
+<label for="pin3"> Name of Destination Shadow Location</label>
+<br><br>
+<span class="mind-touch-lynch-pins">Mind Touch Lynch Pins</span><br>
+<input type="checkbox" id="pin60" name="pin4" value=0 onclick="setLynchPinValue('pin60')">
+<label for="pin4"> Name/Description of Subject(s)</label>
+<input type="checkbox" id="pin61" name="pin5" value=0 onclick="setLynchPinValue('pin61')">
+<label for="pin1"> Name of Subject's Current Shadow Location</label>
+<input type="checkbox" id="pin62" name="pin6" value=0 onclick="setLynchPinValue('pin62')">
+<label for="pin6"> Name of Subject's Location in Shadow</label>
+<br><br>
+<span class="optional-lynch-pins">Optional Lynch Pins</span><br>
+<input type="checkbox" id="pin63" name="pin7" value=0 onclick="setLynchPinValue('pin63')">
+<label for="pin7"> Duration</label>
+<input type="checkbox" id="pin64" name="pin8" value=0 onclick="setLynchPinValue('pin64')">
+<label for="pin8"> Dispel Word</label>
+<br><br>
+</div>
+
+<div style="padding-left: 10px;">
+<input type="button" value="Calculate" onclick="getSum()">
+<br><br>
+</div>
+</font>
+<script>
+
+function clr() {
+document.getElementById('minutes').value = '';
+document.getElementById('hours').value = '';
+location.reload();
+window.scrollTo(0, 0);
+}
+
+function getSum() {
+var subTotal = sumAllLynchPins() + sumAllSelectFields();
+document.getElementById('minutes').value = subTotal;
+document.getElementById('hours').value = (subTotal/60).toFixed(2);
+}
+
+function setLynchPinValue(pinID) {
+let val = Number(document.getElementById(pinID).value);
+if (val === 0) {
+document.getElementById(pinID).value = 10;
+} else {
+document.getElementById(pinID).value = 0;
+}
+}
+
+function sumAllLynchPins() {
+var sum = 0;
+var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+for (var ii = 0; ii < checkboxes.length; ii++) {
+sum += Number(checkboxes[ii].value);
+}
+return sum;
+}
+
+function sumAllSelectFields() {
+var sum = 0;
+var selectFields = document.querySelectorAll('select');
+for (var ii = 0; ii < selectFields.length; ii++) {
+sum += Number(selectFields[ii].value);
+}
+return sum;
+}
+</script>
+</body>
+</html>
+
