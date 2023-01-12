@@ -270,6 +270,50 @@
         <br><br>
       </div>
 
+      <label for="trump-powers">Trump Powers</label>
+      <select id="trump-powers" name="trump-powers">
+        <option selected value=0> -- select an option -- </option>
+        <option style="font-size: 14;" value=1>Contains Trump Image</option>
+        <option style="font-size: 14;" value=2>Trump Deck</option>
+        <option style="font-size: 14;" value=4>Trump Powered</option>
+        <option style="font-size: 14;" value=8>Create & Store Trump Images</option>
+      </select><br>
+
+      <div style="font-size: 13;padding-left:20px;">
+        <input type="checkbox" id="transfer14" name="transfer14" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transer14')">
+        <label for="transfer14">Transfer</label>
+        <input type="checkbox" id="implant14" name="implant14" value=0 onclick="setImplantPowerValue('implant14')">
+        <label for="implant14">Implant</label>
+        <br><br>
+      </div>
+
+      <label for="magic-powers">Magic Powers</label>
+      <select id="magic-powers" name="magic-powers">
+        <option selected value=0> -- select an option -- </option>
+        <option style="font-size: 14;" value=1>Rack a Spell</option>
+        <option style="font-size: 14;" value=2>Name & Numbered</option>
+        <option style="font-size: 14;" value=4>Rack & Use Spells</option>
+      </select><br>
+
+      <div style="font-size: 13;padding-left:20px;">
+        <input type="checkbox" id="transfer15" name="transfer15" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transer15')">
+        <label for="transfer15">Transfer</label>
+        <input type="checkbox" id="implant15" name="implant15" value=0 onclick="setImplantPowerValue('implant15')">
+        <label for="implant15">Implant</label>
+        <br><br>
+      </div>
+
+      <label for="quantity-multipliers">Quantity Multipliers</label>
+      <select id="quantity-multipliers" name="quantity-multipliers">
+        <option selected value=0> -- select an option -- </option>
+        <option style="font-size: 14;" value=1>Unique</option>
+        <option style="font-size: 14;" value=2>Name & Numbered</option>
+        <option style="font-size: 14;" value=3>Horde</option>
+        <option style="font-size: 14;" value=4>Shadow Wide</option>
+        <option style="font-size: 14;" value=5>Environmental</option>
+        <option style="font-size: 14;" value=6>Ubiquitous</option>
+      </select><br>
+
       <div style="padding-left: 10px;">
         <input type="button" value="Calculate" onclick="getSum()">
         <br><br>
@@ -279,7 +323,7 @@
     <script>
 
       function getSum() {
-        var subTotal = sumAllLynchPins() + sumAllSelectFields();
+        var subTotal = sumAllTransfersandImplants() + sumAllSelectFields();
         document.getElementById('minutes').value = subTotal;
         document.getElementById('hours').value = (subTotal/60).toFixed(2);
         document.getElementById('days').value = (subTotal/60/24).toFixed(2);
@@ -321,7 +365,7 @@
         }
       }
 
-      function sumAllLynchPins() {
+      function sumAllTransfersandImplants() {
         var sum = 0;
         var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
         for (var ii = 0; ii < checkboxes.length; ii++) {
