@@ -49,8 +49,10 @@
       <div style="padding-left: 10px;">
         <span>Time to Conjure:</span><br>
         <input type="text" id="minutes">
+
         <span class="total-cost"> or </span>
         <input type="text" id="hours">
+
         <span class="total-cost"> or </span>
         <input type="text" id="days">
         <br><br>
@@ -65,35 +67,30 @@
       <div style="padding-left: 20px;">
         <input type="radio" id="item-present" name="base-item" value=0>
         <label for="item-present">yes</label>
+
         <input type="radio" id="item-absent" name="base-item" value=60 checked>
         <label for="item-absent" style="padding-right: 55px;">no</label>
 
         <input type="radio" id="make-permanent" name="permanence" value=10>
         <label for="make-permanent">yes</label>
+
         <input type="radio" id="not-permanent" name="permanence" value=1 checked>
         <label for="not-permanent">no</label>
         <br><br>
       </div>
 
       <h2 style="padding-left: 10px;">Qualities</h2>
-      <div style="padding-left: 30px;">
+
+      <div style="padding-left: 20px;">
         <label for="vitality">Vitality</label>
         <select id="vitality" name="vitality">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=10>Animal Vitality (1pt)</option>
           <option style="font-size: 14;" value=20>Chaos Vitality (2pt)</option>
           <option style="font-size: 14;" value=40>Amber Vitality (4pt)</option>
-        </select><br>
+        </select>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer1" name="transfer1" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer1')">
-          <label for="transfer1">Transfer</label>
-          <input type="checkbox" id="implant1" name="implant1" value=0 onclick="setImplantQualityValue('implant1')">
-          <label for="implant1">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="movement">Movement</label>
+        <label for="movement" style="padding-left: 15px">Movement</label>
         <select id="movement" name="movement">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=10>Confers Mobility (1pt)</option>
@@ -101,9 +98,16 @@
           <option style="font-size: 14;" value=40>Engine Speed (4pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer2" name="transfer2" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer2')">
+        <div style="font-size: 13;padding-left:70px;">
+          <input type="checkbox" id="transfer1" name="transfer1" value=0 onclick="setTransferQualityValue('transfer1')">
+          <label for="transfer1">Transfer</label>
+
+          <input type="checkbox" id="implant1" name="implant1" value=0 onclick="setImplantQualityValue('implant1')">
+          <label for="implant1" style="padding-right: 170px">Implant</label>
+
+          <input type="checkbox" id="transfer2" name="transfer2" value=0 onclick="setTransferQualityValue('transfer2')">
           <label for="transfer2">Transfer</label>
+
           <input type="checkbox" id="implant2" name="implant2" value=0 onclick="setImplantQualityValue('implant2')">
           <label for="implant2">Implant</label>
           <br><br>
@@ -115,27 +119,26 @@
           <option style="font-size: 14;" value=10>Double Stamina (1pt)</option>
           <option style="font-size: 14;" value=20>Amber Stamina (2pt)</option>
           <option style="font-size: 14;" value=40>Endless Stamina (4pt)</option>
-        </select><br>
+        </select>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer3" name="transfer3" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer3')">
-          <label for="transfer3">Transfer</label>
-          <input type="checkbox" id="implant3" name="implant3" value=0 onclick="setImplantQualityValue('implant3')">
-          <label for="implant3">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="agression">Aggression</label>
-        <select id="agression" name="agression">
+        <label for="aggression" style="padding-left: 15px">Aggression</label>
+        <select id="aggression" name="aggression">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=10>Combat Training (1pt)</option>
           <option style="font-size: 14;" value=20>Combat Reflexes (2pt)</option>
           <option style="font-size: 14;" value=40>Combat Mastery (4pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer4" name="transfer4" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer4')">
+        <div style="font-size: 13;padding-left:80px;">
+          <input type="checkbox" id="transfer3" name="transfer3" value=0 onclick="setTransferQualityValue('transfer3')">
+          <label for="transfer3">Transfer</label>
+
+          <input type="checkbox" id="implant3" name="implant3" value=0 onclick="setImplantQualityValue('implant3')">
+          <label for="implant3" style="padding-right: 175px">Implant</label>
+
+          <input type="checkbox" id="transfer4" name="transfer4" value=0 onclick="setTransferQualityValue('transfer4')">
           <label for="transfer4">Transfer</label>
+
           <input type="checkbox" id="implant4" name="implant4" value=0 onclick="setImplantQualityValue('implant4')">
           <label for="implant4">Implant</label>
           <br><br>
@@ -147,17 +150,9 @@
           <option style="font-size: 14;" value=10>Versus Weapons (1pt)</option>
           <option style="font-size: 14;" value=20>Versus Guns (2pt)</option>
           <option style="font-size: 14;" value=40>Invulnerable (4pt)</option>
-        </select><br>
+        </select>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer5" name="transfer5" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer5')">
-          <label for="transfer5">Transfer</label>
-          <input type="checkbox" id="implant5" name="implant5" value=0 onclick="setImplantQualityValue('implant5')">
-          <label for="implant5">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="damage">Damage</label>
+        <label for="damage" style="padding-left: 15px">Damage</label>
         <select id="damage" name="damage">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=10>Extra Hard (1pt)</option>
@@ -167,11 +162,49 @@
           <option style="font-size: 14;" value=160>Primal Damage* (16pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer6" name="transfer6" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer6')">
+        <div style="font-size: 13;padding-left:65px;">
+          <input type="checkbox" id="transfer5" name="transfer5" value=0 onclick="setTransferQualityValue('transfer5')">
+          <label for="transfer5">Transfer</label>
+
+          <input type="checkbox" id="implant5" name="implant5" value=0 onclick="setImplantQualityValue('implant5')">
+          <label for="implant5" style="padding-right: 160px">Implant</label>
+          
+          <input type="checkbox" id="transfer6" name="transfer6" value=0 onclick="setTransferQualityValue('transfer6')">
           <label for="transfer6">Transfer</label>
+
           <input type="checkbox" id="implant6" name="implant6" value=0 onclick="setImplantQualityValue('implant1')">
           <label for="implant6">Implant</label>
+          <br><br>
+        </div>
+
+        <label for="psychic-sensitivity">Psychic Sensitivity</label>
+        <select id="psychic-sensitivity" name="psychic-sensitivity">
+          <option selected value=0> -- select an option -- </option>
+          <option style="font-size: 14;" value=10>Sensitivity (1pt)</option>
+          <option style="font-size: 14;" value=20>Danger Sense (2pt)</option>
+          <option style="font-size: 14;" value=40>Extraordinary (4pt)</option>
+        </select>
+
+        <label for="psychic-resistance" style="padding-left: 15px">Psychic Resistance</label>
+        <select id="psychic-resistance" name="psychic-resistance">
+          <option selected value=0> -- select an option -- </option>
+          <option style="font-size: 14;" value=10>Chaos Resistance (1pt)</option>
+          <option style="font-size: 14;" value=20>Psychic Neutral (2pt)</option>
+          <option style="font-size: 14;" value=40>Psychic Barrier (4pt)</option>
+        </select><br>
+
+        <div style="font-size: 13;padding-left:150px;">
+          <input type="checkbox" id="transfer7" name="transfer7" value=0 onclick="setTransferQualityValue('transfer7')">
+          <label for="transfer7">Transfer</label>
+
+          <input type="checkbox" id="implant7" name="implant7" value=0 onclick="setImplantQualityValue('implant7')">
+          <label for="implant7" style="padding-right: 230px">Implant</label>
+          
+          <input type="checkbox" id="transfer8" name="transfer8" value=0 onclick="setTransferQualityValue('transfer8')">
+          <label for="transfer8">Transfer</label>
+
+          <input type="checkbox" id="implant8" name="implant8" value=0 onclick="setImplantQualityValue('implant8')">
+          <label for="implant8">Implant</label>
           <br><br>
         </div>
 
@@ -183,66 +216,28 @@
           <option style="font-size: 14;" value=40>Tongues (4pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer7" name="transfer7" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer7')">
-          <label for="transfer7">Transfer</label>
-          <input type="checkbox" id="implant7" name="implant7" value=0 onclick="setImplantQualityValue('implant7')">
-          <label for="implant7">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="psychic-sensitivity">Psychic Sensitivity</label>
-        <select id="psychic-sensitivity" name="psychic-sensitivity">
-          <option selected value=0> -- select an option -- </option>
-          <option style="font-size: 14;" value=10>Sensitivity (1pt)</option>
-          <option style="font-size: 14;" value=20>Danger Sense (2pt)</option>
-          <option style="font-size: 14;" value=40>Extraordinary (4pt)</option>
-        </select><br>
-
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer8" name="transfer8" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer8')">
-          <label for="transfer8">Transfer</label>
-          <input type="checkbox" id="implant8" name="implant8" value=0 onclick="setImplantQualityValue('implant8')">
-          <label for="implant8">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="psychic-resistance">Psychic Resistance</label>
-        <select id="psychic-resistance" name="psychic-resistance">
-          <option selected value=0> -- select an option -- </option>
-          <option style="font-size: 14;" value=10>Chaos Resistance (1pt)</option>
-          <option style="font-size: 14;" value=20>Psychic Neutral (2pt)</option>
-          <option style="font-size: 14;" value=40>Psychic Barrier (4pt)</option>
-        </select><br>
-
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer9" name="transfer9" value=0 style="padding-left: 20px;" onclick="setTransferQualityValue('transfer9')">
+        <div style="font-size: 13;padding-left:210px;">
+          <input type="checkbox" id="transfer9" name="transfer9" value=0 onclick="setTransferQualityValue('transfer9')">
           <label for="transfer9">Transfer</label>
+
           <input type="checkbox" id="implant9" name="implant9" value=0 onclick="setImplantQualityValue('implant9')">
           <label for="implant9">Implant</label>
-          <br><br>
+          <br>
         </div>
       </div>
 
       <h2 style="padding-left: 10px;">Powers</h2>
-      <div style="padding-left: 30px;">
+
+      <div style="padding-left: 20px;">
         <label for="shadow-movement">Shadow Movement</label>
         <select id="shadow-movement" name="shadow-movement">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=60>Follow Shadow Trail (1pt)</option>
           <option style="font-size: 14;" value=120>Follow Shadow Path (2pt)</option>
           <option style="font-size: 14;" value=240>Seek in Shadow (4pt)</option>
-        </select><br>
+        </select>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer10" name="transfer10" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer10')">
-          <label for="transfer10">Transfer</label>
-          <input type="checkbox" id="implant10" name="implant10" value=0 onclick="setImplantPowerValue('implant10')">
-          <label for="implant10">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="shadow-manipulation">Shadow Manipulation</label>
+        <label for="shadow-manipulation" style="padding-left: 15px">Shadow Manipulation</label>
         <select id="shadow-manipulation" name="shadow-manipulation">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=60>"Mold" Shadow Stuff (1pt)</option>
@@ -250,9 +245,16 @@
           <option style="font-size: 14;" value=240>"Mold" Reality (4pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer11" name="transfer11" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer11')">
+        <div style="font-size: 13;padding-left:155px;">
+          <input type="checkbox" id="transfer10" name="transfer10" value=0 onclick="setTransferPowerValue('transfer10')">
+          <label for="transfer10">Transfer</label>
+
+          <input type="checkbox" id="implant10" name="implant10" value=0 onclick="setImplantPowerValue('implant10')">
+          <label for="implant10" style="padding-right: 240px">Implant</label>
+
+          <input type="checkbox" id="transfer11" name="transfer11" value=0 onclick="setTransferPowerValue('transfer11')">
           <label for="transfer11">Transfer</label>
+
           <input type="checkbox" id="implant11" name="implant11" value=0 onclick="setImplantPowerValue('implant11')">
           <label for="implant11">Implant</label>
           <br><br>
@@ -264,17 +266,9 @@
           <option style="font-size: 14;" value=60>Self Healing (1pt)</option>
           <option style="font-size: 14;" value=120>Rapid Healing (2pt)</option>
           <option style="font-size: 14;" value=240>Regeneration (4pt)</option>
-        </select><br>
+        </select>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer12" name="transfer12" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer12')">
-          <label for="transfer12">Transfer</label>
-          <input type="checkbox" id="implant12" name="implant12" value=0 onclick="setImplantPowerValue('implant12')">
-          <label for="implant12">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="item-shape-shifting">Item Shape Shifting</label>
+        <label for="item-shape-shifting" style="padding-left: 15px">Item Shape Shifting</label>
         <select id="item-shape-shifting" name="item-shape-shifting">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=60>Alternate Form (1pt)</option>
@@ -282,9 +276,16 @@
           <option style="font-size: 14;" value=240>Limited Shape Shift (4pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer13" name="transfer13" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer13')">
+        <div style="font-size: 13;padding-left:110px;">
+          <input type="checkbox" id="transfer12" name="transfer12" value=0 onclick="setTransferPowerValue('transfer12')">
+          <label for="transfer12">Transfer</label>
+
+          <input type="checkbox" id="implant12" name="implant12" value=0 onclick="setImplantPowerValue('implant12')">
+          <label for="implant12" style="padding-right: 230px">Implant</label>
+
+          <input type="checkbox" id="transfer13" name="transfer13" value=0 onclick="setTransferPowerValue('transfer13')">
           <label for="transfer13">Transfer</label>
+
           <input type="checkbox" id="implant13" name="implant13" value=0 onclick="setImplantPowerValue('implant13')">
           <label for="implant13">Implant</label>
           <br><br>
@@ -297,17 +298,9 @@
           <option style="font-size: 14;" value=2>Trump Deck (2pt)</option>
           <option style="font-size: 14;" value=4>Trump Powered (4pt)</option>
           <option style="font-size: 14;" value=8>Create & Store Trump Images* (8pt)</option>
-        </select><br>
+        </select>
 
-        <div style="font-size: 13;padding-left:20px;">
-          <input type="checkbox" id="transfer14" name="transfer14" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer14')">
-          <label for="transfer14">Transfer</label>
-          <input type="checkbox" id="implant14" name="implant14" value=0 onclick="setImplantPowerValue('implant14')">
-          <label for="implant14">Implant</label>
-          <br><br>
-        </div>
-
-        <label for="magic-powers">Magic Powers</label>
+        <label for="magic-powers" style="padding-left: 15px">Magic Powers</label>
         <select id="magic-powers" name="magic-powers">
           <option selected value=0> -- select an option -- </option>
           <option style="font-size: 14;" value=1>Rack a Spell (1pt)</option>
@@ -315,9 +308,16 @@
           <option style="font-size: 14;" value=4>Rack & Use Spells (4pt)</option>
         </select><br>
 
-        <div style="font-size: 13;padding-left:20px;">
+        <div style="font-size: 13;padding-left:125px;">
+          <input type="checkbox" id="transfer14" name="transfer14" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer14')">
+          <label for="transfer14">Transfer</label>
+
+          <input type="checkbox" id="implant14" name="implant14" value=0 onclick="setImplantPowerValue('implant14')">
+          <label for="implant14"style="padding-right: 190px">Implant</label>
+
           <input type="checkbox" id="transfer15" name="transfer15" value=0 style="padding-left: 20px;" onclick="setTransferPowerValue('transfer15')">
           <label for="transfer15">Transfer</label>
+
           <input type="checkbox" id="implant15" name="implant15" value=0 onclick="setImplantPowerValue('implant15')">
           <label for="implant15">Implant</label>
           <br><br>
@@ -332,11 +332,6 @@
           <option style="font-size: 14;" value=5>Environmental (*5)</option>
           <option style="font-size: 14;" value=6>Ubiquitous (*6)</option>
         </select><br><br><br>
-      </div>
-
-      <div style="padding-left: 10px;">
-        <input type="button" value="Calculate" onclick="getSum()">
-        <br><br><br><br><br><br>
       </div>
     </font>
 
@@ -416,6 +411,7 @@
         }
         return sum;
       }
+
     </script>
   </body>
   </html>
